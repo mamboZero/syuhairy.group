@@ -1,0 +1,90 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agent.name %>
+</p>
+
+<p>
+  <strong>Cert num:</strong>
+  <%= @agent.cert_num %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @agent.email %>
+</p>
+
+<p>
+  <strong>Ic num:</strong>
+  <%= @agent.ic_num %>
+</p>
+
+<p>
+  <strong>Mailing address 1:</strong>
+  <%= @agent.mailing_address_1 %>
+</p>
+
+<p>
+  <strong>Mailing address 2:</strong>
+  <%= @agent.mailing_address_2 %>
+</p>
+
+<p>
+  <strong>Employee address 1:</strong>
+  <%= @agent.employee_address_1 %>
+</p>
+
+<p>
+  <strong>Employee address 2:</strong>
+  <%= @agent.employee_address_2 %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @agent.race %>
+</p>
+
+<p>
+  <strong>Religion:</strong>
+  <%= @agent.religion %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @agent.marital_status %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @agent.profession %>
+</p>
+
+<p>
+  <strong>Documents:</strong>
+  <a href="<%= @agent.doc%>">Download PDF</a>
+</p>
+
+<hr>
+
+<h2>Spouses (<%= @agent.spouses.size %>)</h2>
+
+<% @agent.spouses.each do |s| %>
+
+<h2><%= %> </h2>
+
+<p>
+  <strong> Name</strong>
+  <%= s.name %>
+</p>
+
+<p>
+  <strong> IC. Number</strong>
+  <%= s.ic_num %>
+</p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_agent_path(@agent) %> |
+<%= link_to 'Back', agents_path %>

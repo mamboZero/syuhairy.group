@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dependent.name %>
+</p>
+
+<p>
+  <strong>Ic num:</strong>
+  <%= @dependent.ic_num %>
+</p>
+
+<p>
+  <strong>Mail add 1:</strong>
+  <%= @dependent.mail_add_1 %>
+</p>
+
+<p>
+  <strong>Mail add 2:</strong>
+  <%= @dependent.mail_add_2 %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @dependent.race %>
+</p>
+
+<p>
+  <strong>Religion:</strong>
+  <%= @dependent.religion %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @dependent.marital_status %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @dependent.profession %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @dependent.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @dependent.weight %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @dependent.phone_number %>
+</p>
+
+<p>
+  <strong>Contribution value:</strong>
+  <%= @dependent.contribution_value %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @dependent.agent_id %>
+</p>
+
+<%= link_to 'Edit', edit_dependent_path(@dependent) %> |
+<%= link_to 'Back', dependents_path %>

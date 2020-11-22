@@ -1,0 +1,96 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card shadow" style="width:100%">
+  <div class="container">
+    <div class="card-header">
+      <h3>Spouse info</h3>
+      <small>Agent Name : <%= @spouse.agent.name %></small>
+    </div>
+    <div class="card-body">
+      <p>
+  <strong>Status:</strong>
+  <%= @spouse.status %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @spouse.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spouse.name %>
+</p>
+
+<p>
+  <strong>Ic num:</strong>
+  <%= @spouse.ic_num %>
+</p>
+
+<p>
+  <strong>Mail add 1:</strong>
+  <%= @spouse.mail_add_1 %>
+</p>
+
+<p>
+  <strong>Mail add 2:</strong>
+  <%= @spouse.mail_add_2 %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @spouse.race %>
+</p>
+
+<p>
+  <strong>Religion:</strong>
+  <%= @spouse.religion %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @spouse.marital_status %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @spouse.profession %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @spouse.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @spouse.weight %>
+</p>
+
+<p>
+  <strong>Hp number:</strong>
+  <%= @spouse.hp_number %>
+</p>
+
+<p>
+  <strong>Gross income:</strong>
+  <%= @spouse.gross_income %>
+</p>
+
+<p>
+  <strong>Employee phone number:</strong>
+  <%= @spouse.employee_phone_number %>
+</p>
+
+<p>
+  <strong>agent Name:</strong>
+  <%= @spouse.agent.name %>
+</p>
+    </div>
+  
+</div>
+</div>
+
+
+<%= link_to 'Edit', edit_spouse_path(@spouse) %> |
+<%= link_to 'Back', spouses_path %>

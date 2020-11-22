@@ -1,0 +1,143 @@
+  <div class="card shadow" style="width:100%">
+    <div class="card-body">
+
+<%= simple_form_for @agent do |form| %>
+  <% if agent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agent.errors.count, "error") %> prohibited this agent from being saved:</h2>
+
+      <ul>
+        <% agent.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="agent-info">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="insur-plan">
+     <%= form.collection_radio_buttons :plan_ids, Plan.all, :id, :name %>
+   </div>
+    </div>
+    <div class="col-md-4">
+      <%= form.input :contribution, collection: [10,20,30,40,50,60], selected: 1 %>
+    </div>
+    
+
+   <div class="row">
+     <div class="col-md-6">
+        <%= form.input :name %>
+     </div>
+    <div class="col-md-6">
+      <%= form.input :cert_num, label: 'Certificate number' %>
+    </div>
+    <div class="col-md-6"> 
+      <%= form.input :email %>
+    </div>
+    <div class="col-md-6">
+      <%= form.input :ic_num, label: 'Identity Card Number' %>
+    </div>
+    <div class="col-md-12">
+      <%= form.input :mailing_address_1 %>
+      <%= form.input :mailing_address_2 %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.input :employee_address_1 %>
+      <%= form.input :employee_address_2 %>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.input :race %>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.input :religion, collection: ['Islam','Hindu','Buddha','others'], selected: 1 %>
+      
+    </div>
+
+    <div class="col-md-6">
+      <%= form.input :marital_status, collection: ['Single', 'Married', 'Divorced', 'Widowed'], selected: 1 %>
+    </div>
+
+    <div class="col">
+      <%= form.input :profession %>
+    </div>
+
+    <div class="col">
+      <%= form.file_field :doc %>
+    </div>
+   </div>
+
+  </div>
+</div> 
+<!-- agent-info -->
+
+<p>
+  <button class="btn btn-primary form-control" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">+ Add Spouse
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+
+  <h2>Spouse</h2>
+
+  <%= form.fields_for :spouses do |s| %>
+
+    <div class="field">
+        <%= s.label :name %>
+        <%= s.text_field :name %>
+    </div>
+
+
+    <div class="field">
+        <%= s.label :status %>
+        <%= s.text_field :status %>
+    </div>
+
+    <div class="field">
+        <%= s.label :email %>
+        <%= s.text_field :email %>
+    </div>
+
+    <div class="field">
+        <%= s.label :ic_num %>
+        <%= s.text_field :ic_num %>
+    </div>
+  <% end %>
+  </div>
+  </div>
+</div>
+
+
+  <p>
+  <button class="btn btn-primary form-control" type="button" data-toggle="collapse" data-target="#collapseExamplex" aria-expanded="false" aria-controls="collapseExample">+ Add Dependent
+  </button>
+</p>
+<div class="collapse" id="collapseExamplex">
+  <div class="card card-body">
+
+  <h2>dependent</h2>
+
+  <%= form.fields_for :dependents do |d| %>
+
+    <div class="field">
+        <%= d.label :name %>
+        <%= d.text_field :name %>
+    </div>
+
+     <div class="field">
+        <%= d.label :ic_number %>
+        <%= d.text_field :ic_num %>
+    </div>
+
+  <% end %>
+</div>
+</div>
+</div>
+    <%= form.submit 'save'%>
+  </div>
+<% end %>
+</div>
