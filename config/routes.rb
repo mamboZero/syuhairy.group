@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  root 'agents#index
   resources :plans
   resources :dependents
   resources :spouses
