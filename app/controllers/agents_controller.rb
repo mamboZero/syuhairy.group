@@ -7,6 +7,7 @@ class AgentsController < ApplicationController
   # GET /agents.json
   def index
     @agents = Agent.all
+    @users = User.all
   end
 
   # GET /agents/1
