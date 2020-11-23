@@ -1,90 +1,114 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @agent.name %>
-</p>
+<div class="card shadow" style="width:100%">
+  <div class="card-header">Agent Details</div>
+    <div class="container">
+      <div class="card-body">
+        <div class="card shadow">
+          <div class="container">
+            <div class="card-body">
 
-<p>
-  <strong>Cert num:</strong>
-  <%= @agent.cert_num %>
-</p>
+      <p>
+      <strong>Name:</strong> </p>
+      <p><%= @agent.name %></p>
+   
 
-<p>
-  <strong>Email:</strong>
-  <%= @agent.email %>
-</p>
+    <p>
+      <strong>Certicaficate number:</strong>
+      <%= @agent.cert_num %>
+    </p>
 
-<p>
-  <strong>Ic num:</strong>
-  <%= @agent.ic_num %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @agent.email %>
+    </p>
 
-<p>
-  <strong>Mailing address 1:</strong>
-  <%= @agent.mailing_address_1 %>
-</p>
+    <p>
+      <strong>Ic num:</strong>
+      <%= @agent.ic_num %>
+    </p>
 
-<p>
-  <strong>Mailing address 2:</strong>
-  <%= @agent.mailing_address_2 %>
-</p>
+    <p>
+      <strong>Mailing address 1:</strong>
+      <%= @agent.mailing_address_1 %>
+    </p>
 
-<p>
-  <strong>Employee address 1:</strong>
-  <%= @agent.employee_address_1 %>
-</p>
+    <p>
+      <strong>Mailing address 2:</strong>
+      <%= @agent.mailing_address_2 %>
+    </p>
 
-<p>
-  <strong>Employee address 2:</strong>
-  <%= @agent.employee_address_2 %>
-</p>
+    <p>
+      <strong>Employee address 1:</strong>
+      <%= @agent.employee_address_1 %>
+    </p>
 
-<p>
-  <strong>Race:</strong>
-  <%= @agent.race %>
-</p>
+    <p>
+      <strong>Employee address 2:</strong>
+      <%= @agent.employee_address_2 %>
+    </p>
 
-<p>
-  <strong>Religion:</strong>
-  <%= @agent.religion %>
-</p>
+    <p>
+      <strong>Race:</strong>
+      <%= @agent.race %>
+    </p>
 
-<p>
-  <strong>Marital status:</strong>
-  <%= @agent.marital_status %>
-</p>
+    <p>
+      <strong>Religion:</strong>
+      <%= @agent.religion %>
+    </p>
 
-<p>
-  <strong>Profession:</strong>
-  <%= @agent.profession %>
-</p>
+    <p>
+      <strong>Marital status:</strong>
+      <%= @agent.marital_status %>
+    </p>
 
-<p>
-  <strong>Documents:</strong>
-  <a href="<%= @agent.doc%>">Download PDF</a>
-</p>
+    <p>
+      <strong>Profession:</strong>
+      <%= @agent.profession %>
+    </p>
 
-<hr>
 
-<h2>Spouses (<%= @agent.spouses.size %>)</h2>
+    <p>
+      <strong>Documents:</strong>
+      <% if @agent.doc.present? %>
+      <a href="<%= @agent.doc %>">Download PDF</a>
+      <%else %>
+      No File has been uploaded....
+      <% end %>
+    </p>
+    <!-- agent detail end -->
+    </div>
+    </div>
 
-<% @agent.spouses.each do |s| %>
 
-<h2><%= %> </h2>
+    <h2>Spouses (<%= @agent.spouses.size %>)</h2>
 
-<p>
-  <strong> Name</strong>
-  <%= s.name %>
-</p>
+    <% @agent.spouses.each do |s| %>
 
-<p>
-  <strong> IC. Number</strong>
-  <%= s.ic_num %>
-</p>
+    <h2><%= %> </h2>
 
-<% end %>
+    <p>
+      <strong> Name</strong>
+      <%= s.name %>
+    </p>
 
-<%= link_to 'Edit', edit_agent_path(@agent) %> |
-<%= link_to 'Back', agents_path %>
+    <p>
+      <strong> IC. Number</strong>
+      <%= s.ic_num %>
+    </p>
+
+    <% end %>
+
+
+    <%= link_to 'Edit', edit_agent_path(@agent) %> |
+    <%= link_to 'Back', agents_path %>
+
+    </div>
+
+    </div>
+      </div>
+
+            </div>
+

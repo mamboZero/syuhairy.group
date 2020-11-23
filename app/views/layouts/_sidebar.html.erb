@@ -1,4 +1,5 @@
 <!-- Sidebar -->
+<% if user_signed_in? %>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -94,9 +95,9 @@
 
             <!-- Nav Item - user -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+
+                <%= link_to 'sign out', destroy_user_session_path, method: :delete, :class => "nav-link" %>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Sign out</span></a>
             </li>
 
 
@@ -111,3 +112,5 @@
 
         </ul>
         <!-- End of Sidebar -->
+
+        <% end %>
