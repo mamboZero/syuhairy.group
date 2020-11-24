@@ -7,7 +7,6 @@ class AgentsController < ApplicationController
   # GET /agents.json
   def index
     @agents = Agent.all
-    @users = User.all
   end
 
   # GET /agents/1
@@ -74,6 +73,6 @@ class AgentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def agent_params
-      params.require(:agent).permit(:name,:contribution, :cert_num, :email, :ic_num, :mailing_address_1, :mailing_address_2, :employee_address_1, :employee_address_2, :race, :religion, :marital_status, :profession, :pdf_agent,:doc, :spouses_attributes => [:name,:status,:email,:ic_num,:race,:religion,:marital_status], :dependents_attributes => [:name, :ic_num, :phone_number], :plans_attributes => [:name])
+      params.require(:agent).permit(:name,:contribution, :cert_num, :email, :ic_num, :mailing_address_1, :mailing_address_2, :employee_address_1, :employee_address_2, :race, :religion, :marital_status, :profession, :pdf_agent,:doc,:plan_ids, :spouses_attributes => [:name,:status,:email,:ic_num,:race,:religion,:marital_status], :dependents_attributes => [:name, :ic_num, :phone_number])
     end
 end

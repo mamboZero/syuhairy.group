@@ -1,3 +1,3 @@
 class Plan < ApplicationRecord
-	belongs_to :agent, optional: true
+	has_many :agent
 end

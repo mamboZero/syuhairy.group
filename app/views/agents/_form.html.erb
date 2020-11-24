@@ -18,7 +18,8 @@
   <div class="row">
     <div class="col-md-8">
       <div class="insur-plan">
-     <%= form.collection_radio_buttons :plan_ids, Plan.all, :id, :name %>
+     <%#= form.collection_radio_buttons :plan_ids, Plan.all, :id, :name %>
+     <%= form.select :plan_id, Plan.all, :id, :name %>
    </div>
     </div>
     <div class="col-md-4">
