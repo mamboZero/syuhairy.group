@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable,:registerable
 
- attr_writer :login
+ attr_accessor :login
 
  def login
  	@login || identitycard || email
