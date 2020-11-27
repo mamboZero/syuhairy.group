@@ -8,10 +8,17 @@
         <div class="card shadow">
           <div class="container">
             <div class="card-body">
+              <p>
+                <h4>Plan:</h4>
+                  <%= @agent.plan.name %>
+              </p>
+
+              <h4>Contribution:</h4>
+                  <%= @agent.display_currency %>
+              </p>
 
 
-      <p>
-      <strong>Name:</strong> </p>
+      <h4>Name:</h4>
       <p><%= @agent.name %></p>
    
 

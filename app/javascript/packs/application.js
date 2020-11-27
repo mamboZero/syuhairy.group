@@ -10,18 +10,20 @@ require("channels")
 
 import 'bootstrap'
 
+/**
+
 require('src/bootstrap.bundle.min')
 require('src/jquery.easing.min')
-
 require('src/sb-admin-2.min')
 require('src/Chart.min')
 require('src/chart-area-demo')
 require('src/datatables-demo')
 
-
+**/
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

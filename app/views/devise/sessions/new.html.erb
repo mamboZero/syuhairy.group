@@ -1,10 +1,14 @@
+
 <section class="form-block py-5">
   <div class="container">
     <div class="row">
+                  <p id="notice"><%= notice %></p>
+
       <div class="col-lg-5 col-md-7 col-sm-12 mx-auto">
         <div class="login shadow py-5 px-4 my-5">
           <div class="title text-right py-3">
-            <h3 class="font-weight-bold">Syuhiary Group</h3>
+
+            <h3 class="font-weight-bold">Syuhairy Group</h3>
             <p>Data Entry cms</p>
           </div>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,15 +21,14 @@
             required: false,
             input_html: { autocomplete: "current-password" }, :class => "form-control rounded-pill shadow-none" %>
 <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            
             </div>
-            <%= f.button :submit, "Log in", :class => 'btn btn-btc font-weight-bold shadow-none' %>
+            <%= f.button :submit, "Log in", :class => 'btn btn-btc font-weight-bold shadow-none btn-primary' %>
             <% end %>
           </form>
+          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
   </div>
-  <%= render "devise/shared/links" %>
 </section>
 

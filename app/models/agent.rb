@@ -7,4 +7,13 @@ class Agent < ApplicationRecord
 	# accepts_nested_attributes_for :plans
 
 	mount_uploader :doc, DocUploader
+
+
+def display_currency
+	"RM #{contribution}"
 end
+
+
+
+end
+
