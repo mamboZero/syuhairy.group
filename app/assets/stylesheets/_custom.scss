@@ -48,12 +48,10 @@ input::-webkit-input-placeholder {
 }
 
 input:-moz-placeholder {
-  /* Firefox 18- */
   color: white !important;
 }
 
 input: :-moz-placeholder {
-  /* Firefox 19+ */
   color: white !important;
 }
 
