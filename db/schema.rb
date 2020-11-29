@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_172922) do
   end
 
   add_foreign_key "dependents", "agents"
-  add_foreign_key "plans", "agents"
+  add_foreign_key "
+  plans", "agents"
   add_foreign_key "spouses", "agents"
 end

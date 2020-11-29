@@ -15,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -54,6 +54,21 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <%= link_to 'Spouses List', spouses_path, :class => "collapse-item" %>
                         <%= link_to 'Add Spouse', new_spouse_path, :class => "collapse-item" %>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Plans</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <%= link_to 'Plan List', plans_path, :class => "collapse-item" %>
+                        <%= link_to 'Add Plan', new_plan_path, :class => "collapse-item" %>
                     </div>
                 </div>
             </li>

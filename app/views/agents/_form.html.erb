@@ -71,7 +71,6 @@
       <%= form.file_field :doc %>
     </div>
    </div>
-
   </div>
 </div> 
 <!-- agent-info -->
@@ -88,29 +87,65 @@
   <%= form.fields_for :spouses do |s| %>
 
     <div class="field">
-        <%= s.label :name %>
-        <%= s.text_field :name %>
-    </div>
-
-
-    <div class="field">
-        <%= s.label :status %>
-        <%= s.text_field :status %>
+        <%= s.input :name %>
     </div>
 
     <div class="field">
-        <%= s.label :email %>
-        <%= s.text_field :email %>
+        <%= s.input :status %>
     </div>
 
     <div class="field">
-        <%= s.label :ic_num %>
-        <%= s.text_field :ic_num %>
+        <%= s.input :email %>
+    </div>
+
+    <div class="field">
+        <%= s.input :ic_num, :label => "Identity Card",required: true, placeholder: "910212142325" %>
+        <small>Without "-" </small>
+    </div>
+
+    <div class="field">
+        <%= s.input :mail_add_1 %>
+    </div>
+    <div class="field">
+        <%= s.input :mail_add_2 %>
+    </div>
+    <div class="field">
+        <%= s.input :race %>
+    </div>
+
+    <div class="field">
+        <%= s.input :religion %>
+    </div>
+
+    <div class="field">
+        <%= s.input :marital_status %>
+    </div>
+    <div class="field">
+        <%= s.input :profession %>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= s.input :height %>
+    </div>
+    <div class="col-md-6">
+        <%= s.input :weight %>
+    </div>
+
+    </div>
+    
+    <div class="field">
+        <%= s.input :hp_number %>
+    </div>
+    <div class="field">
+        <%= s.input :gross_income %>
+    </div>
+    <div class="field">
+        <%= s.input :employee_phone_number %>
     </div>
   <% end %>
   </div>
   </div>
-</div>
+
 
 
   <p>
@@ -120,25 +155,57 @@
 <div class="collapse" id="collapseExamplex">
   <div class="card card-body">
 
-  <h2>dependent</h2>
+  <h2>Dependent</h2>
 
   <%= form.fields_for :dependents do |d| %>
 
     <div class="field">
-        <%= d.label :name %>
-        <%= d.text_field :name %>
+        <%= d.input :name %>
     </div>
 
      <div class="field">
-        <%= d.label :ic_number %>
-        <%= d.text_field :ic_num %>
+        <%= d.input :ic_num %>
+    </div>
+    <div class="field">
+        <%= d.input :mail_add_1 %>
+    </div>
+    <div class="field">
+        <%= d.input :mail_add_2 %>
+    </div>
+    <div class="field">
+        <%= d.input :race %>
+    </div>
+    <div class="field">
+        <%= d.input :religion %>
+    </div>
+    <div class="field">
+        <%= d.input :marital_status %>
+    </div>
+    <div class="field">
+        <%= d.input :profession %>
+    </div>
+    <div class="field">
+        <%= d.input :height %>
+    </div>
+    <div class="field">
+        <%= d.input :weight %>
+    </div>
+    <div class="field">
+        <%= d.input :phone_number %>
+    </div>
+    <div class="field">
+        <%= d.input :contribution_value %>
     </div>
 
   <% end %>
+
 </div>
+
 </div>
+<%= form.submit 'save', :class => "btn btn-primary"%>
 </div>
-    <%= form.submit 'save'%>
+    
   </div>
 <% end %>
+</div>
 </div>
