@@ -1,4 +1,4 @@
-<%= form_with(model: dependent, local: true) do |form| %>
+<%= simple_form_for @dependent do |form| %>
   <% if dependent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h2>
@@ -72,8 +72,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :agent_id %>
-    <%= form.text_field :agent_id %>
+    <%= form.collection_select :agent, Agent.all, :id , :name  %>
   </div>
 
   <div class="actions">
