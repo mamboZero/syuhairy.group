@@ -1,28 +1,96 @@
-<div class="container">
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
+<div class="row">
+ <!-- Earnings (Monthly) Card Example -->
+ <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
+                        User</div>
+                    <div class="h2 mb-0 font-weight-bold text-gray-800"><%= User.count %></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-users fa-4x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                        Total Contribution</div>
+                    <div class="h2 mb-0 font-weight-bold text-gray-800">RM <%= Agent.sum(:contrib) %>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-4x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Earnings (Monthly) Card Example -->
+ <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Agents</div>
+                    <div class="h2 mb-0 font-weight-bold text-gray-800"><%= Agent.count %></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-id-card fa-4x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Earnings (Monthly) Card Example -->
+ <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        Plans</div>
+                    <div class="h2 mb-0 font-weight-bold text-gray-800"><%= Plan.count %></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-id-card fa-4x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
 
 <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Email</th>
+                <th>Identity Card No.</th>
+                <th>Update</th>
+                <th>Register</th>
             </tr>
         </thead>
         <tbody>
-          <% User.all.each do |x| %>
+          <% User.all.each do |u| %>
             <tr>
-                <td><%= x.email %></td>
-                <td><%= x.identitycard %></td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
+                <td><%= u.email %></td>
+                <td><%= u.identitycard %></td>
+                <td><%= u.updated_at %></td>
+                <td><%= u.created_at %></td>
             </tr>
             <% end %>
 

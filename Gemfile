@@ -26,11 +26,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'simple_form'
-
+gem "font-awesome-rails"
 gem 'carrierwave'
-
 gem 'devise'
-
+gem "chartkick"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

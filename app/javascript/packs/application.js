@@ -7,11 +7,12 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
 import 'bootstrap'
 
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+});
 /**
-
 require('src/bootstrap.bundle.min')
 require('src/jquery.easing.min')
 require('src/sb-admin-2.min')
@@ -20,9 +21,7 @@ require('src/chart-area-demo')
 require('src/datatables-demo')
 
 **/
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-});
+
 
 
 

@@ -4,7 +4,8 @@ class Agent < ApplicationRecord
 	belongs_to :plan
 	accepts_nested_attributes_for :spouses
 	accepts_nested_attributes_for :dependents
-	# accepts_nested_attributes_for :plans
+
+	validates :ic_num, presence: :true
 
 	mount_uploader :doc, DocUploader
 
@@ -12,7 +13,6 @@ class Agent < ApplicationRecord
 def display_currency
 	"RM #{contribution}"
 end
-
 
 
 end
