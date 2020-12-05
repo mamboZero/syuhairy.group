@@ -5,12 +5,19 @@ class AgentsController < ApplicationController
   # GET /agents
   # GET /agents.json
   def index
-    @agents = Agent.all
+    @agents = current_user.agents
+    @agent = Agent.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @agent.generate_csv, filename: "Agents-#{Date.today}.csv"}
+    end
   end
 
   # GET /agents/1
   # GET /agents/1.json
   def show
+
   end
 
   # GET /agents/new
@@ -72,6 +79,6 @@ class AgentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def agent_params
-      params.require(:agent).permit(:plan_id,:name,:contrib, :cert_num, :email, :ic_num, :mailing_address_1, :mailing_address_2, :employee_address_1, :employee_address_2, :race, :religion, :marital_status, :profession,:doc, :spouses_attributes => [:name,:status,:email,:ic_num,:race,:religion,:marital_status], :dependents_attributes => [:name, :ic_num, :phone_number])
+      params.require(:agent).permit(:user_id,:plan_id,:name,:contrib, :cert_num, :email, :ic_num, :mailing_address_1, :mailing_address_2, :employee_address_1, :employee_address_2, :race, :religion, :marital_status, :profession,:doc, :spouses_attributes => [:name,:status,:email,:ic_num,:race,:religion,:marital_status], :dependents_attributes => [:name, :ic_num, :phone_number])
     end
 end

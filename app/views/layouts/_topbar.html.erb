@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if signed_in? %>
 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -63,14 +63,9 @@ C/O https://placeholder.com/">
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
+
+                                    <%= link_to '<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>Edit Profile'.html_safe, edit_user_registration_path, :class => 'dropdown-item' %>
+
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log

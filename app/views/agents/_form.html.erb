@@ -15,11 +15,14 @@
   <% end %>
 
 <div class="agent-info">
+
+<% if params.include?("edit") %>
+  <%= form.collection_select :user_id, User.all, :id, :email %>
+  <% end %>
   <div class="row">
     <div class="col-md-8">
       <div class="insur-plan">
      <%= form.collection_radio_buttons :plan_id, Plan.all, :id, :name %>
-     <%#= form.collection_select :plan, Plan.all, :id, :name %>
    </div>
     </div>
     <div class="col-md-4">

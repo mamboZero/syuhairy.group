@@ -1,3 +1,4 @@
+<% if signed_in? && current_user %>
 
 <p id="notice"><%= notice %></p>
 
@@ -23,7 +24,7 @@
    
 
     <p>
-      <strong>Certicaficate number:</strong>
+      <strong>Certificate number:</strong>
       <%= @agent.cert_num %>
     </p>
 
@@ -90,6 +91,8 @@
     </div>
     </div>
 
+    <% if @agent.spouses.size.nil?%>
+        <hr/>
 
     <h2>Spouses (<%= @agent.spouses.size %>)</h2>
 
@@ -108,6 +111,8 @@
     </p>
 
     <% end %>
+    <% end %>
+
 
 
     <%= link_to 'Edit', edit_agent_path(@agent) %> |
@@ -120,3 +125,4 @@
 
             </div>
 
+<% end %>

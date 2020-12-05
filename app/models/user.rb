@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  has_many :agents
 
-	validates_length_of :identitycard, :maximum => 12
-
+	validates :identitycard, length: {is: 12, message: "Please enter a valid ic number "}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable , 
