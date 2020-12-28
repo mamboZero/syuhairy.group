@@ -5,8 +5,8 @@ class AgentsController < ApplicationController
   # GET /agents
   # GET /agents.json
   def index
-    @agents = current_user.agents
-    @agent = Agent.all
+    @agent = current_user.agents
+    @agents = Agent.all
 
     respond_to do |format|
       format.html
