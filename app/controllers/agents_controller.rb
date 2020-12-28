@@ -10,7 +10,7 @@ class AgentsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data @agent.generate_csv, filename: "Agents-#{Date.today}.csv"}
+      format.csv { send_data @agents.generate_csv, filename: "Agents-#{Date.today}.csv"}
     end
   end
 
